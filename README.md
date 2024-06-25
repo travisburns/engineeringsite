@@ -1,4 +1,5 @@
 # R&W Engineering Firm Website Redesign
+![rwcover](https://github.com/travisburns/engineeringsite/assets/41456635/200dd038-dbdd-4d02-8f24-00d0b771b533)
 
 A modern, responsive website showcasing engineering services and projects, built with Next.js 14 and TypeScript.
 
@@ -63,8 +64,8 @@ A modern, responsive website showcasing engineering services and projects, built
 
 ```bash
 # Clone the Repository
-git clone [Github Link placeholder]
-cd r-w-engineering-redesign
+git clone []
+cd rwengineering
 
 # Install Dependencies
 npm install
@@ -86,7 +87,7 @@ Optimized images and implemented lazy loading for improved performance
 Designed and implemented a modular structure for easier maintenance and future scalability
 
 Learnings
-Throughout the development of this project, the team:
+Throughout the development of this project:
 
 Gained experience in migrating from React Router to Next.js routing system
 Enhanced skills in TypeScript and type-safe development
