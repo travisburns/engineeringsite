@@ -61,7 +61,7 @@ A modern, responsive website showcasing engineering services and projects, built
   * **layout.tsx**: Root layout component.
 
 
-##Key Accomplishments
+## Key Accomplishments
 
 Developed a fully responsive website using Next.js 14, TypeScript, and Tailwind CSS
 Implemented dynamic routing for services and projects, allowing for easy content management
@@ -69,7 +69,7 @@ Created reusable components like ServicesAccordion for improved user interaction
 Optimized images and implemented lazy loading for improved performance
 Designed and implemented a modular structure for easier maintenance and future scalability
 
-##Learnings
+## Learnings
 
 Throughout the development of this project:
 
