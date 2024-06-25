@@ -60,6 +60,29 @@ A modern, responsive website showcasing engineering services and projects, built
   * **page.tsx**: Root page component.
   * **layout.tsx**: Root layout component.
 
+
+##Key Accomplishments
+
+Developed a fully responsive website using Next.js 14, TypeScript, and Tailwind CSS
+Implemented dynamic routing for services and projects, allowing for easy content management
+Created reusable components like ServicesAccordion for improved user interaction
+Optimized images and implemented lazy loading for improved performance
+Designed and implemented a modular structure for easier maintenance and future scalability
+
+##Learnings
+
+Throughout the development of this project:
+
+Gained experience in migrating from React Router to Next.js routing system
+Enhanced skills in TypeScript and type-safe development
+Learned best practices for SEO optimization in Next.js applications
+Improved understanding of responsive design principles using Tailwind CSS
+Developed expertise in creating and managing dynamic routes in Next.js
+Gained experience in implementing accessibility features in React components
+Enhanced skills in performance optimization for web applications
+Learned to effectively structure a large-scale web application for maintainability
+
+
 ## Installation
 
 ```bash
@@ -78,25 +101,7 @@ npm run build
 
 # Start the Production Server
 npm start
-Key Accomplishments
 
-Developed a fully responsive website using Next.js 14, TypeScript, and Tailwind CSS
-Implemented dynamic routing for services and projects, allowing for easy content management
-Created reusable components like ServicesAccordion for improved user interaction
-Optimized images and implemented lazy loading for improved performance
-Designed and implemented a modular structure for easier maintenance and future scalability
-
-Learnings
-Throughout the development of this project:
-
-Gained experience in migrating from React Router to Next.js routing system
-Enhanced skills in TypeScript and type-safe development
-Learned best practices for SEO optimization in Next.js applications
-Improved understanding of responsive design principles using Tailwind CSS
-Developed expertise in creating and managing dynamic routes in Next.js
-Gained experience in implementing accessibility features in React components
-Enhanced skills in performance optimization for web applications
-Learned to effectively structure a large-scale web application for maintainability
 
 Troubleshooting
 If you encounter any issues during development or deployment, please check the following:
