@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import Image from 'next/image'
 import servicesData from '../../constants/ServicesData/ServicesData'
 
@@ -11,12 +12,15 @@ const HomeServices = () => {
           {servicesData.map((service, index) => (
             <div key={index} className='bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105'>
               <div className='relative h-48 sm:h-56 md:h-64'>
-                <Image
+              <Link href={`/services/${service.id}`}>
+               <Image
                   src={service.img}
                   alt={service.title}
                   layout='fill'
                   objectFit='cover'
-                />
+                /> 
+               </Link>
+              
               </div>
               <div className='p-6'>
                 <h3 className='font-playfair text-xl md:text-2xl font-semibold text-yellow-500 mb-2'>{service.title}</h3>

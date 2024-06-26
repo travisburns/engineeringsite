@@ -24,24 +24,22 @@ export default function RegistrationsPage() {
     ]
   
     return (
-      <div className='text-white font-playfair'>
-        <h1 className='text-4xl sm:text-5xl lg:text-6xl mb-12'>Registrations</h1>
-       
-        <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12'>
-          {registrations.map(({state, fields}) => (
-            <li key={state} className='text-lg'>
-              <span className='bg-yellow-500 text-black font-bold px-2'>{state}:</span>
-              <span className='bg-zinc-900 px-2 ml-2'>{fields.join(', ')}</span>
-            </li>
-          ))}
-        </ul>
-  
-        <h3 className='text-2xl mb-4'>Not LISTED?</h3>
-        <p>
-          We provide engineering services to the entire United States,
-          including Alaska and Hawaii. If your state is not named within
-          the above list of registrations, please contact us or call 503-292-6000.
-        </p>
-      </div>
+      <div className="text-white font-playfair">
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-8 font-bold">Registrations</h1>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        {registrations.map(({state, fields}) => (
+          <li key={state} className="text-lg">
+            <span className="bg-yellow-500 text-black font-bold px-2">{state}:</span>
+            <span className="bg-gray-800 px-2 ml-2">{fields.join(', ')}</span>
+          </li>
+        ))}
+      </ul>
+      <h3 className="text-2xl mb-4 font-bold">Not LISTED?</h3>
+      <p className="text-lg">
+        We provide engineering services to the entire United States,
+        including Alaska and Hawaii. If your state is not named within
+        the above list of registrations, please contact us or call 503-292-6000.
+      </p>
+    </div>
     )
   }

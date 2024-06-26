@@ -8,34 +8,35 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
   const page = parseInt(searchParams.page || '1');
   const startIndex = (page - 1) * POSTS_PER_PAGE;
   const endIndex = startIndex + POSTS_PER_PAGE;
-
   const blogPosts = BlogData.slice(startIndex, endIndex);
 
   return (
-    <div className="bg-gray-900  mx-auto py-28">
-      <h1 className="text-4xl font-bold mb-8 text-center text-white">Blog</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogPosts.map((post: BlogPost) => (
-          <div key={post.id} className="bg-white shadow-lg rounded-lg p-6">
-            <Image src={post.img} alt={post.SEOTitle} width={500} height={300} className="mb-4 w-full h-auto rounded-lg" />
-            <p className="text-gray-600 mb-2">{post.date}</p>
-            <Link href={`/blog/${post.id}`}>
-              <h2 className="text-xl font-semibold mb-2 hover:text-blue-500 transition-colors duration-300">{post.SEOTitle}</h2>
+    <div className="min-h-screen bg-gray-900 py-28 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-12 font-bold text-white">Blog</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogPosts.map((post: BlogPost) => (
+            <div key={post.id} className="bg-gray-800 shadow-lg rounded-lg p-6">
+              <Image src={post.img} alt={post.SEOTitle} width={500} height={300} className="mb-4 w-full h-auto rounded-lg" />
+              <p className="text-gray-300 mb-2">{post.date}</p>
+              <Link href={`/blog/${post.id}`}>
+                <h2 className="text-xl font-semibold mb-2 text-yellow-500 hover:text-yellow-400 transition-colors duration-300">{post.SEOTitle}</h2>
+              </Link>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-center mt-8">
+          {page > 1 && (
+            <Link href={`/blog?page=${page - 1}`} className="px-4 py-2 bg-yellow-500 text-black rounded-lg mr-4 hover:bg-yellow-400">
+              Previous
             </Link>
-          </div>
-        ))}
-      </div>
-      <div className="flex justify-center mt-8">
-        {page > 1 && (
-          <Link href={`/blog?page=${page - 1}`} className="px-4 py-2 bg-gray-800 text-white rounded-lg mr-4">
-            Previous
-          </Link>
-        )}
-        {endIndex < BlogData.length && (
-          <Link href={`/blog?page=${page + 1}`} className="px-4 py-2 bg-gray-800 text-white rounded-lg">
-            Next
-          </Link>
-        )}
+          )}
+          {endIndex < BlogData.length && (
+            <Link href={`/blog?page=${page + 1}`} className="px-4 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400">
+              Next
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

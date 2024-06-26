@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState } from 'react';
 import { PlusIcon, MinusIcon } from '@heroicons/react/24/solid';
 import { Faq } from './FaqsData';
@@ -12,7 +11,7 @@ const FaqAccordion: React.FC<Faq> = ({ question, answer }) => {
   };
 
   return (
-    <div className="border-b border-gray-300">
+    <div className="border-b border-gray-700">
       <button
         className="flex justify-between items-center w-full py-4 text-left text-white font-semibold focus:outline-none"
         onClick={toggleAccordion}

@@ -6,7 +6,7 @@ const HomeContact = () => {
   return (
     <section className="bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-white font-playfair text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-12 text-center">
+        <h2 className="text-white font-playfair font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-12 text-center">
           Get in touch with our engineering experts today!
         </h2>
         <div className="flex flex-col lg:flex-row bg-black rounded-lg overflow-hidden shadow-2xl">

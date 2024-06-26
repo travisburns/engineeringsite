@@ -5,7 +5,7 @@ export default function AboutPage()  {
   
     return (
       <div className="text-white font-playfair">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-8">About</h1>
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-8 font-bold">About</h1>
         <div className="space-y-6 text-lg">
           <p>
             In 1978, R&W began providing engineering services for the Portland metro area. Our office, located in Beaverton, Oregon,

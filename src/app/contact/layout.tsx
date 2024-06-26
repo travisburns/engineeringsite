@@ -2,10 +2,11 @@ import ContactNav from './ContactNav';
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="bg-gray-900  px-8 sm:px-12 lg:px-16 py-28">
-    
-      <ContactNav />
-      <main>{children}</main>
+    <div className="min-h-screen bg-gray-900 py-28 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <ContactNav />
+        <main className="mt-8">{children}</main>
+      </div>
     </div>
   );
 }
