@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# R&W Engineering Firm Website Redesign
+![rwcover](https://github.com/travisburns/engineeringsite/assets/41456635/200dd038-dbdd-4d02-8f24-00d0b771b533)
 
-## Getting Started
+A modern, responsive website showcasing engineering services and projects, built with Next.js 14 and TypeScript.
 
-First, run the development server:
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Key Accomplishments](#key-accomplishments)
+- [Learnings](#learnings)
+- [Troubleshooting](#troubleshooting)
+
+## Features
+
+- Responsive design adapting to various screen sizes and devices
+- Dynamic routing for services and projects
+- Custom React components for improved user interaction
+- Dedicated sections for services, projects, team members, and more
+- Optimized for search engines and performance
+- Accessibility features for inclusive user experience
+
+## Technologies Used
+
+- TypeScript
+- Next.js 14
+- React
+- Tailwind CSS
+- Heroicons
+
+## Project Structure
+
+* **src/app/**: Contains the main Next.js application code.
+  * **about/**: About section with its own routing structure.
+    * **affiliates/**: Affiliates subsection.
+    * **careers/**: Careers subsection.
+    * **components/**: Components specific to the about section.
+    * **registrations/**: Registrations subsection.
+    * **team/**: Team subsection.
+    * **layout.tsx**: Layout component for the about section.
+    * **page.tsx**: Main page component for the about section.
+  * **components/**: Reusable components used throughout the app.
+  * **constants/**: Constant values and configurations.
+  * **contact/**: Contact section.
+  * **faqs/**: FAQs section.
+  * **home/**: Home page components.
+  * **news/**: News section.
+  * **projects/**: Projects section.
+    * **[slug]/**: Dynamic routing for individual projects.
+      * **[subcategorySlug]/**: Further dynamic routing for project subcategories.
+    * **projectsAssets/**: Assets related to projects.
+    * **projectsData/**: Data files for projects.
+    * **page.tsx**: Main page component for the projects section.
+  * **services/**: Services section.
+    * **[slug]/**: Dynamic routing for individual services.
+    * **servicesAssets/**: Assets related to services.
+    * **servicesData/**: Data files for services.
+    * **page.tsx**: Main page component for the services section.
+  * **page.tsx**: Root page component.
+  * **layout.tsx**: Root layout component.
+
+
+## Key Accomplishments
+
+Developed a fully responsive website using Next.js 14, TypeScript, and Tailwind CSS
+Implemented dynamic routing for services and projects, allowing for easy content management
+Created reusable components like ServicesAccordion for improved user interaction
+Optimized images and implemented lazy loading for improved performance
+Designed and implemented a modular structure for easier maintenance and future scalability
+
+## Learnings
+
+Throughout the development of this project:
+
+Gained experience in migrating from React Router to Next.js routing system
+Enhanced skills in TypeScript and type-safe development
+Learned best practices for SEO optimization in Next.js applications
+Improved understanding of responsive design principles using Tailwind CSS
+Developed expertise in creating and managing dynamic routes in Next.js
+Gained experience in implementing accessibility features in React components
+Enhanced skills in performance optimization for web applications
+Learned to effectively structure a large-scale web application for maintainability
+
+
+## Installation
 
 ```bash
+# Clone the Repository
+git clone []
+cd rwengineering
+
+# Install Dependencies
+npm install
+
+# Run the Development Server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Build for Production
+npm run build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Start the Production Server
+npm start
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+Troubleshooting
+If you encounter any issues during development or deployment, please check the following:
 
-To learn more about Next.js, take a look at the following resources:
+Ensure all dependencies are correctly installed
+Verify that your Node.js version is compatible with Next.js 14
+Check for any TypeScript errors in your code
+Ensure that your environment variables are correctly set up
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If problems persist, please open an issue in the GitHub repository.
