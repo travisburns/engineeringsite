@@ -19,7 +19,7 @@ const Navbar = () => {
     { name: 'Faqs', path: '/faqs' },
     { name: 'News', path: '/news' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact/contactus' },
+    { name: 'Contact', path: '/contact/contactUs' },
   ];
 
   console.log(navItems);
