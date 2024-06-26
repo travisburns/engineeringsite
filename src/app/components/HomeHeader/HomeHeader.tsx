@@ -2,13 +2,43 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import headerImg from './headerimg.png'
+import { motion, useAnimation } from 'framer-motion'
+import { useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 const HomeHeader = () => {
+  const controls = useAnimation()
+  const [ref, inView] = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  })
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
+
+  const textVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+  }
+
+  const imageVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+  }
+
   return (
-    <div className="relative bg-gradient-to-r from-gray-900 to-gray-800 overflow-hidden">
+    <div className="relative bg-gradient-to-r from-gray-900 to-gray-800 overflow-hidden" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 py-8 sm:py-12 md:py-16 lg:py-20 flex flex-col lg:flex-row items-center">
-          <div className="w-full lg:w-1/2 lg:pr-8">
+          <motion.div
+            className="w-full lg:w-1/2 lg:pr-8"
+            initial="hidden"
+            animate={controls}
+            variants={textVariants}
+          >
             <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
               <span className="block">Engineered for</span>
               <span className="block text-yellow-400">Excellence</span>
@@ -28,8 +58,13 @@ const HomeHeader = () => {
                 </p>
               </Link>
             </div>
-          </div>
-          <div className="w-full mt-8 lg:mt-0 lg:w-1/2">
+          </motion.div>
+          <motion.div
+            className="w-full mt-8 lg:mt-0 lg:w-1/2"
+            initial="hidden"
+            animate={controls}
+            variants={imageVariants}
+          >
             <div className="relative h-64 sm:h-72 md:h-80 lg:h-96 w-full">
               <Image
                 src={headerImg}
@@ -44,7 +79,7 @@ const HomeHeader = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 to-gray-900/70 mix-blend-multiply rounded-lg"></div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-900 to-transparent"></div>
