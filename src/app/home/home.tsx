@@ -10,7 +10,7 @@ import HomeStats from '../components/HomeStats/HomeStats'
 
 export default function HomePage() {
   return (
-    <main>
+    <main className='mt-12'>
       <HomeHeader />
       <HomeStats />
       <HomeServices />
