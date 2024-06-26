@@ -13,7 +13,7 @@ const HomeHeader = () => {
               <span className="block text-yellow-400">Excellence</span>
             </h1>
             <p className="mt-3 text-xl text-gray-300 sm:mt-5 sm:max-w-xl md:mt-5">
-              Building innovative solutions and lasting partnerships through cutting-edge engineering.
+            Dedicated To Building Long Lasting Relationships With Our Clients Through Exceptional Service And Uncompromising Quality.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row sm:justify-start">
               <a href="#contact" className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-500 md:py-4 md:text-lg md:px-10 transition duration-300 ease-in-out transform hover:-translate-y-1">

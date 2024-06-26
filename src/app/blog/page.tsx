@@ -12,7 +12,7 @@ export default function BlogPage({ searchParams }: { searchParams: { page?: stri
   const blogPosts = BlogData.slice(startIndex, endIndex);
 
   return (
-    <div className="container mx-auto py-12">
+    <div className="bg-gray-900  mx-auto py-28">
       <h1 className="text-4xl font-bold mb-8 text-center text-white">Blog</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogPosts.map((post: BlogPost) => (

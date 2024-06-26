@@ -18,7 +18,7 @@ export default function ProjectDetailSinglePage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-28">
       <h1 className="text-4xl font-bold mb-8">{subcategory.SEOTitle}</h1>
       <Image src={subcategory.image} alt={subcategory.subtitle} width={800} height={500} className="mb-8 w-full h-auto rounded-lg" />
       <p className="text-lg mb-4">{subcategory.descriptionsummary}</p>

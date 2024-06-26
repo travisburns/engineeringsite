@@ -12,7 +12,7 @@ export default function BlogDetailPage() {
   }
 
   return (
-    <div className="container mx-auto py-12">
+    <div className="bg-gray-900 mx-auto py-28">
       <h1 className="text-4xl font-bold mb-8 text-white">{blogPost.SEOTitle}</h1>
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">

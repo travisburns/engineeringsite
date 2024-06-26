@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function NewsPage() {
   return (
-    <div className="bg-gray-900 mx-auto px-8 sm:px-12 lg:px-16 py-12 py-12">
+    <div className="bg-gray-900 mx-auto px-8 sm:px-12 lg:px-16 py-28">
       <h1 className="text-4xl font-bold mb-8 text-center text-white">News</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {NewsData.map((news) => (
