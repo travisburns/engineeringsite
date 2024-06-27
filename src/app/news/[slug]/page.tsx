@@ -1,7 +1,14 @@
 "use client";
+
 import { useParams } from 'next/navigation';
 import NewsData, { News } from '../NewsData/NewsData';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
 
 export default function NewsDetailPage() {
   const { slug } = useParams();
@@ -13,21 +20,33 @@ export default function NewsDetailPage() {
 
   return (
     <div className="min-h-screen bg-gray-900 py-28 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-12 font-bold text-white">{news.SEOTitle}</h1>
+      <motion.div 
+        className="max-w-7xl mx-auto"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: { transition: { staggerChildren: 0.1 } }
+        }}
+      >
+        <motion.h1 
+          className="text-4xl sm:text-5xl lg:text-6xl mb-12 font-bold text-white"
+          variants={fadeInUp}
+        >
+          {news.SEOTitle}
+        </motion.h1>
         <div className="flex flex-col lg:flex-row">
-          <div className="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
+          <motion.div className="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8" variants={fadeInUp}>
             <Image src={news.img} alt={news.SEOTitle} width={800} height={500} className="w-full h-auto rounded-lg" />
-          </div>
+          </motion.div>
           <div className="lg:w-1/2">
-            <p className="text-gray-300 mb-4">{news.date}</p>
-            <p className="text-lg text-gray-300 mb-4">{news.description}</p>
-            {news.description2 && <p className="text-lg text-gray-300 mb-4">{news.description2}</p>}
-            {news.description3 && <p className="text-lg text-gray-300 mb-4">{news.description3}</p>}
-            {news.description4 && <p className="text-lg text-gray-300 mb-4">{news.description4}</p>}
+            <motion.p className="text-gray-300 mb-4" variants={fadeInUp}>{news.date}</motion.p>
+            <motion.p className="text-lg text-gray-300 mb-4" variants={fadeInUp}>{news.description}</motion.p>
+            {news.description2 && <motion.p className="text-lg text-gray-300 mb-4" variants={fadeInUp}>{news.description2}</motion.p>}
+            {news.description3 && <motion.p className="text-lg text-gray-300 mb-4" variants={fadeInUp}>{news.description3}</motion.p>}
+            {news.description4 && <motion.p className="text-lg text-gray-300 mb-4" variants={fadeInUp}>{news.description4}</motion.p>}
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

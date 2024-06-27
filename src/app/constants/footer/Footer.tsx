@@ -7,13 +7,13 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
 const Footer = () => {
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about/aboutus' },
+    { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Projects', path: '/projects' },
     { name: 'FAQs', path: '/faqs' },
     { name: 'News', path: '/news' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact/contactus' },
+    { name: 'Contact', path: '/contact/contactUs' },
   ]
 
   return (

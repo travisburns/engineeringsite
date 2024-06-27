@@ -1,7 +1,9 @@
 'use client';
+
 import React, { useState } from 'react';
 import { PlusIcon, MinusIcon } from '@heroicons/react/24/solid';
 import { Faq } from './FaqsData';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const FaqAccordion: React.FC<Faq> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,17 +19,30 @@ const FaqAccordion: React.FC<Faq> = ({ question, answer }) => {
         onClick={toggleAccordion}
       >
         <span className="text-lg">{question}</span>
-        {isOpen ? (
-          <MinusIcon className="w-5 h-5 text-yellow-500" />
-        ) : (
-          <PlusIcon className="w-5 h-5 text-yellow-500" />
-        )}
+        <motion.div
+          animate={{ rotate: isOpen ? 45 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {isOpen ? (
+            <MinusIcon className="w-5 h-5 text-yellow-500" />
+          ) : (
+            <PlusIcon className="w-5 h-5 text-yellow-500" />
+          )}
+        </motion.div>
       </button>
-      {isOpen && (
-        <div className="pb-4 text-gray-300">
-          <p>{answer}</p>
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="pb-4 text-gray-300"
+          >
+            <p>{answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

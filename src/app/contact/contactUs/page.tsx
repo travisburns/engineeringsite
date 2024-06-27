@@ -2,30 +2,53 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import contactImg from '../BeavertonOffice.jpg';
+import { motion } from 'framer-motion';
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
 
 export default function ContactUsPage() {
   const form = useRef<HTMLFormElement>(null);
 
   return (
-    <section className="text-white font-playfair">
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-8 font-bold">Contact Us</h1>
-      <div className="mb-8 max-w-4xl mx-auto">
-        <Image 
-          src={contactImg} 
-          alt="Beaverton Office" 
-          className="w-full rounded-lg shadow-lg" 
+    <motion.section 
+      className="text-white font-playfair"
+      initial="hidden"
+      animate="visible"
+      variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+    >
+      <motion.h1 
+        className="text-4xl sm:text-5xl lg:text-6xl mb-8 font-bold"
+        variants={fadeInUp}
+      >
+        Contact Us
+      </motion.h1>
+      <motion.div className="mb-8 max-w-4xl mx-auto" variants={fadeInUp}>
+        <Image
+          src={contactImg}
+          alt="Beaverton Office"
+          className="w-full rounded-lg shadow-lg"
           width={800}
           height={600}
           layout="responsive"
         />
-      </div>
-      <div className="bg-gray-800 text-center p-8 rounded-lg shadow-lg mb-8 max-w-2xl mx-auto">
+      </motion.div>
+      <motion.div 
+        className="bg-gray-800 text-center p-8 rounded-lg shadow-lg mb-8 max-w-2xl mx-auto"
+        variants={fadeInUp}
+      >
         <h2 className="text-2xl sm:text-3xl md:text-4xl mb-4 text-yellow-500">Beaverton Oregon</h2>
         <p className="text-lg sm:text-xl">9615 SW Allen Blvd., Suite 107</p>
         <p className="text-lg sm:text-xl">Beaverton, OR 97005</p>
         <p className="text-lg sm:text-xl">Phone: 503.292.6000</p>
-      </div>
-      <form ref={form} className="space-y-4 max-w-2xl mx-auto">
+      </motion.div>
+      <motion.form 
+        ref={form} 
+        className="space-y-4 max-w-2xl mx-auto"
+        variants={fadeInUp}
+      >
         <input
           type="text"
           placeholder="Name"
@@ -67,7 +90,7 @@ export default function ContactUsPage() {
         >
           Send Message
         </button>
-      </form>
-    </section>
+      </motion.form>
+    </motion.section>
   );
 }
