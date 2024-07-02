@@ -82,6 +82,9 @@ Gained experience in implementing accessibility features in React components
 Enhanced skills in performance optimization for web applications
 Learned to effectively structure a large-scale web application for maintainability
 
+** In Progress
+Creation of user authentication and client portal, in addition, a admin login and page in order to create and post news and blog articles, drawing from a mongoDB database. 
+Using Bcrpyt for salting and hashing of passwords. 
 
 ## Installation
 
