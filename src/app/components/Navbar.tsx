@@ -1,15 +1,26 @@
 "use client";
-
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Icon } from 'react-icons-kit'
 import { menu } from 'react-icons-kit/feather/menu'
 import { x } from 'react-icons-kit/feather/x'
-
+import { useRouter } from 'next/navigation'
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    setIsLoggedIn(!!localStorage.getItem('token'));
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
+    router.push('/login');
+  };
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -22,13 +33,12 @@ const Navbar = () => {
     { name: 'Contact', path: '/contact/contactUs' },
   ];
 
-  console.log(navItems);
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
-            
+            {/* Your logo or brand name here */}
           </div>
           <div className="hidden md:flex md:items-center md:space-x-4">
             {navItems.map((item) => (
@@ -36,6 +46,28 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            {isLoggedIn ? (
+              <>
+                <Link href="/profile" className="text-white hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
+                  Profile
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="text-white hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link href="/login" className="text-white hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
+                  Login
+                </Link>
+                <Link href="/Register" className="text-white hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
+                  Register
+                </Link>
+              </>
+            )}
           </div>
           <div className="md:hidden flex items-center">
             <button
@@ -47,7 +79,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
       {/* Mobile menu, show/hide based on menu state */}
       <div className={`md:hidden ${navbarOpen ? 'block' : 'hidden'}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -56,6 +87,28 @@ const Navbar = () => {
               {item.name}
             </Link>
           ))}
+          {isLoggedIn ? (
+            <>
+              <Link href="/profile" className="text-white hover:text-yellow-500 block px-3 py-2 rounded-md text-base font-medium">
+                Profile
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="text-white hover:text-yellow-500 block px-3 py-2 rounded-md text-base font-medium w-full text-left"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link href="/login" className="text-white hover:text-yellow-500 block px-3 py-2 rounded-md text-base font-medium">
+                Login
+              </Link>
+              <Link href="/register" className="text-white hover:text-yellow-500 block px-3 py-2 rounded-md text-base font-medium">
+                Register
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>
