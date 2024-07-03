@@ -85,7 +85,7 @@ Learned to effectively structure a large-scale web application for maintainabili
 ## In Progress
 Creation of user authentication and client portal, in addition, a admin login and page in order to create and post news and blog articles, drawing from a mongoDB database. 
 Using Bcrpyt for salting and hashing of passwords. 
-### created backend proccess's for account creation, bcyrpt salting and hashing, schema's, connection to MongoDb. AN error remains, as when logging in the res is of a 500 error. 
+### created backend proccess's for account creation, bcyrpt salting and hashing, schema's, connection to MongoDb. A error remains, as when logging in the res is of a 500 error. 
 
 
 ## Installation
