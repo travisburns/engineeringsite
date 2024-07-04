@@ -51,6 +51,9 @@ const Navbar = () => {
                 <Link href="/profile" className="text-white hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
                   Profile
                 </Link>
+                <Link href="/Dashboard" className="text-white hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
+                  Dashboard
+                </Link>
                 <button
                   onClick={handleLogout}
                   className="text-white hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out"
