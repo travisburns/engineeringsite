@@ -86,7 +86,7 @@ Learned to effectively structure a large-scale web application for maintainabili
 Creation of user authentication and client portal, in addition, a admin login and page in order to create and post news and blog articles, drawing from a mongoDB database. 
 Using Bcrpyt for salting and hashing of passwords. 
 ### created backend proccess's for account creation, bcyrpt salting and hashing, schema's, connection to MongoDb. A error remains, as when logging in the res is of a 500 error. 
-
+### Solved the issue of logging in and a issue with styles not being applied as I should of put the pages for login, account creation, in the src/app not a folder outside of it. - however new error occures where clicking any link will auto-logout, this is due to the state not being shared across components. I will need to use useContext for the account log in. 
 
 ## Installation
 
