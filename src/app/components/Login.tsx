@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -10,19 +10,16 @@ const Login: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-
     try {
       const res = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
-
       if (res.ok) {
-        const { token } = await res.json();
-        // Store the token in localStorage or a secure cookie
+        const { token, redirect } = await res.json();
         localStorage.setItem('token', token);
-        router.push('/dashboard');
+        router.push(redirect);
       } else {
         const data = await res.json();
         setError(data.message || 'Login failed');

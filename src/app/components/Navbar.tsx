@@ -63,7 +63,7 @@ const Navbar = () => {
                 <Link href="/login" className="text-white hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
                   Login
                 </Link>
-                <Link href="/Register" className="text-white hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
+                <Link href="/register" className="text-white hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
                   Register
                 </Link>
               </>

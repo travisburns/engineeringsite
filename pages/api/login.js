@@ -1,6 +1,6 @@
 import dbConnect from "../../utils/dbConnect";
 import User from '../../models/User';
-import bcrpyt from 'bcryptjs';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 export default async function handler(req, res) {
@@ -13,27 +13,27 @@ export default async function handler(req, res) {
     const {email, password } = req.body;
 
     try {
-        //check if user exists
-        const user = await User.findone({ email });
+        // Check if user exists
+        const user = await User.findOne({ email });
         if (!user) {
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
-
-        //check password
-        const isMatch = await bcrpyt.compare(password, user.password);
+        // Check password
+        const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            return res.status(400).json({ message: 'invalid credentials' });
+            return res.status(400).json({ message: 'Invalid credentials' });
         }
 
         // Create and sign JWT
         const token = jwt.sign(
             { userId: user._id },
             process.env.JWT_SECRET,
-            {expiresIn: '1hr'}
+            {expiresIn: '1h'}
         );
 
-        res.status(200).json({ token });
+        // Include the redirect in the response
+        res.status(200).json({ token, redirect: '/Dashboard' });
     } catch (error) {
         console.error(error);
         res.status(500).json({message: 'Server error'});
