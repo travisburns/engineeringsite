@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import servicesData from '../../constants/ServicesData/ServicesData'
+import servicesData from '../../../app/services/servicesData/ServicesData'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
