@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image, { StaticImageData } from 'next/image';
 import UserProfile from '../components/UserProfile';
-import servicesData from '../constants/ServicesData/ServicesData';
+import servicesData from '../../app/services/servicesData/ServicesData'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 interface Project {

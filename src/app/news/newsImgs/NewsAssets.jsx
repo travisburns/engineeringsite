@@ -6,7 +6,7 @@ import KameronJones from './KameronJones.jpg'
 import MadisonChenault from './MadisonChenault.jpg'
 import patrickSteelman from './patrickSteelman.png'
 import RamonaGraves from './RamonaGraves.jpg'
-import RWlogo from './RWLogo.gif'
+import RWlogo from './RWlogo.gif'
 import TamraPhillips from './TamraPhillips.png'
 
 
