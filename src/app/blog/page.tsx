@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { BlogPost, BlogData } from './BlogData';
+import { BlogPost, BlogData } from './Blogdata';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 

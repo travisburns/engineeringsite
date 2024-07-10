@@ -1,18 +1,20 @@
 'use client';
-
-import { useParams } from 'next/navigation';
 import { services, Service, SubCategory } from '../servicesData/ServicesData';
 import Image from 'next/image';
 import ServicesAccordion from './ServicesAccordion';
 import { motion } from 'framer-motion';
+
+interface Params {
+  slug: string;
+}
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
 };
 
-export default function ServiceDetailPage() {
-  const { slug } = useParams();
+export default function ServiceDetailPage({ params }: { params: Params }) {
+  const { slug } = params;
   const service = services.find((service: Service) => service.id === slug);
 
   if (!service) {
@@ -21,7 +23,7 @@ export default function ServiceDetailPage() {
 
   return (
     <div className="min-h-screen bg-gray-900 py-28 px-4 sm:px-6 lg:px-8">
-      <motion.div 
+      <motion.div
         className="max-w-7xl mx-auto"
         initial="hidden"
         animate="visible"
@@ -29,7 +31,7 @@ export default function ServiceDetailPage() {
           visible: { transition: { staggerChildren: 0.1 } }
         }}
       >
-        <motion.h1 
+        <motion.h1
           className="text-4xl sm:text-5xl lg:text-6xl mb-12 font-bold text-white"
           variants={fadeInUp}
         >
@@ -44,11 +46,17 @@ export default function ServiceDetailPage() {
               <h2 className="text-xl font-semibold mb-2 text-yellow-500">{subcategory.subtitle}</h2>
               {Object.keys(subcategory)
                 .filter((key) => key.startsWith('subCategory'))
-                .map((key) => (
-                  <p key={key} className="text-gray-300 mb-1">
-                    {subcategory[key as keyof SubCategory]}
-                  </p>
-                ))}
+                .map((key) => {
+                  const value = subcategory[key as keyof SubCategory];
+                  if (typeof value === 'string' || Array.isArray(value)) {
+                    return (
+                      <p key={key} className="text-gray-300 mb-1">
+                        {value}
+                      </p>
+                    );
+                  }
+                  return null;
+                })}
               {subcategory.accordionContent && (
                 <ServicesAccordion title="View Details" content={subcategory.accordionContent} />
               )}

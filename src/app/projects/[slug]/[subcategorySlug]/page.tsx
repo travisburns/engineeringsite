@@ -5,13 +5,19 @@ import { projects, Project, SubCategory } from '../../ProjectsData/projectsData'
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+interface Params {
+  slug: string;
+  subcategorySlug: string;
+}
+
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
 };
 
-export default function ProjectDetailSinglePage() {
-  const { slug, subcategorySlug } = useParams();
+export default function ProjectDetailSinglePage({ params }: { params: Params}) {
+  const { slug, subcategorySlug } = params;
   const project = projects.find((project: Project) => project.id === slug);
   
   if (!project) {

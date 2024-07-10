@@ -2,7 +2,7 @@
 //for the time being, this is all mock data. Working on implementing the backend data per client to load from. 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import UserProfile from '../components/UserProfile';
 import servicesData from '../constants/ServicesData/ServicesData';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
@@ -77,7 +77,7 @@ const Dashboard = () => {
       setEngineeredComponents(mockComponents);
       setIsLoading(false);
     }
-  }, []);
+  }, [router]);
 
   const fetchUserData = async (token: string) => {
     // ... (same as before)

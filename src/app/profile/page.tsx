@@ -1,3 +1,4 @@
+
 import UserProfile from "@/app/components/UserProfile";
 
 const ProfilePage = () => <UserProfile />;

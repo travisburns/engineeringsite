@@ -1,5 +1,4 @@
 "use client"
-
 import { useParams } from 'next/navigation';
 import { BlogPost, BlogData } from '../Blogdata';
 import Image from 'next/image';
@@ -10,8 +9,12 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0 }
 };
 
-export default function BlogDetailPage() {
-  const { slug } = useParams();
+interface Params {
+  slug: string;
+}
+
+export default function BlogDetailPage({ params }: { params: Params}) {
+  const { slug } = params;
   const blogPost = BlogData.find((post: BlogPost) => post.id === slug);
 
   if (!blogPost) {
@@ -20,7 +23,7 @@ export default function BlogDetailPage() {
 
   return (
     <div className="min-h-screen bg-gray-900 py-28 px-4 sm:px-6 lg:px-8">
-      <motion.div 
+      <motion.div
         className="max-w-7xl mx-auto"
         initial="hidden"
         animate="visible"
@@ -28,7 +31,7 @@ export default function BlogDetailPage() {
           visible: { transition: { staggerChildren: 0.1 } }
         }}
       >
-        <motion.h1 
+        <motion.h1
           className="text-4xl sm:text-5xl lg:text-6xl mb-12 font-bold text-white"
           variants={fadeInUp}
         >
@@ -43,11 +46,17 @@ export default function BlogDetailPage() {
             <div className="text-lg text-gray-300 mb-4">
               {Object.keys(blogPost)
                 .filter((key) => key.startsWith('description'))
-                .map((key) => (
-                  <motion.p key={key} className="mb-4" variants={fadeInUp}>
-                    {blogPost[key as keyof BlogPost]}
-                  </motion.p>
-                ))}
+                .map((key) => {
+                  const value = blogPost[key as keyof BlogPost];
+                  if (typeof value === 'string') {
+                    return (
+                      <motion.p key={key} className="mb-4" variants={fadeInUp}>
+                        {value}
+                      </motion.p>
+                    );
+                  }
+                  return null;
+                })}
             </div>
           </div>
         </div>

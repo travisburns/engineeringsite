@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import { MarkWirf, Covid19, tools, RNW, gregRobertson, harryreeder, CIDA100, balancingworkandfamily, orcascropped, fireflowtests, automation, cealingSquares, VRF, intern, troubleshooting, utilityCoordination, sistersmaintance, lessonCFD, LowHanging, cause, enginerd, humansnotnumbers, GreenEnergy } from '../blog/blogassets/blogassets';
+import { MarkWirf, Covid19, tools, RNW, gregRobertson, harryreeder, CIDA100, balancingworkandfamily, orcascropped, fireflowtests, automation, cealingSquares, VRF, intern, troubleshooting, utilityCoordination, sistersmaintance, lessonCFD, LowHanging, enginerd, humansnotnumbers, GreenEnergy } from '../blog/blogassets/blogassets';
 
 export type BlogPost = {
   id: string;
@@ -402,7 +402,7 @@ export const BlogData: BlogPost[] = [
 {
     id: 'casualforacause',
     date: "July 5, 2014",
-    img: cause,
+    img: LowHanging,
     title: "Casual-for-a-Cause-Fridays-Hits-a-Milestone",
     SEOTitle: "Casual for a cause Fridays Hits a Milestone",
     description: "leven years ago, R&W Engineering began a tradition that would impact many lives for years to come. Casual Friday for a Cause not only allotted for the employees to dress in their favorite comfortable pair of jeans on fabulous Friday, but also asked that each employee donate five dollars to the selected charity of the quarter. The employees agreed together this could be an opportunity to give back and make a difference. Each quarter R&W employees vote on a charity and all the money raised during that quarter is donated to that charity. R&W employees fund local charities as well as nationwide organizations. Over the last 11 years, R&W employees have donated over $30,000 to different charities and organizations. Some of the different charities R&W has been a part of are the American Heart Association, Royal Family Kids camp, Oregon Food Bank, Mercy Corps, Dove Lewis Animal Hospital, Sports Outreach and many more. Casual Friday for a Cause is a wonderful opportunity to involve ourselves with our community beyond our office walls.",

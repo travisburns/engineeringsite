@@ -1,5 +1,4 @@
 'use client';
-
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
@@ -9,7 +8,7 @@ const fadeInUp = {
 
 export default function CareersPage() {
   return (
-    <motion.div 
+    <motion.div
       className="text-white font-playfair"
       initial="hidden"
       animate="visible"
@@ -17,7 +16,7 @@ export default function CareersPage() {
         visible: { transition: { staggerChildren: 0.3 } }
       }}
     >
-      <motion.h1 
+      <motion.h1
         className="text-4xl sm:text-5xl lg:text-6xl mb-8 font-bold"
         variants={fadeInUp}
       >
@@ -38,15 +37,15 @@ export default function CareersPage() {
       <motion.section className="mb-8" variants={fadeInUp}>
         <h2 className="text-2xl mb-4 font-bold text-yellow-500">General</h2>
         <p className="text-lg">
-          R&W is always interested in receiving applications from mechanical, electrical, and control engineers who have the desire to work in the challenging, rewarding, and professional work environment of R&W.
-          R&W strives to hire individuals, both technical and support staff, who take pride in their work, and strive for not only individual success but also the success of the R&W team. We stand by our commitment of "Building Lasting Relationships"
-          with both our clients and our employees. R&W offers a competitive salary and benefits package.
+          R&amp;W is always interested in receiving applications from mechanical, electrical, and control engineers who have the desire to work in the challenging, rewarding, and professional work environment of R&amp;W.
+          R&amp;W strives to hire individuals, both technical and support staff, who take pride in their work, and strive for not only individual success but also the success of the R&amp;W team. We stand by our commitment of &quot;Building Lasting Relationships&quot;
+          with both our clients and our employees. R&amp;W offers a competitive salary and benefits package.
         </p>
       </motion.section>
       <motion.section variants={fadeInUp}>
         <h2 className="text-2xl mb-4 font-bold text-yellow-500">Resumes</h2>
         <p className="text-lg">
-          Unsolicited resumes are welcome, please call the R&W office to learn how to submit your resume for review. R&W is a certified Equal Employment Opportunity Employer.
+          Unsolicited resumes are welcome, please call the R&amp;W office to learn how to submit your resume for review. R&amp;W is a certified Equal Employment Opportunity Employer.
         </p>
       </motion.section>
     </motion.div>

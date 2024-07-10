@@ -17,10 +17,10 @@ import utilityCoordination from '../blogassets/utilityCoord.jpg'
 import sistersmaintance from '../blogassets/sistersmaintenance.jpg'
 import lessonCFD from '../blogassets/CFDlessonimage.jpg'
 import LowHanging from '../blogassets/energyUpgrades.jpg'
-import cause from '../blogassets/CasualforaCauseLogo.jpg'
+
 import enginerd from '../blogassets/theenginerd.jpg'
 import humansnotnumbers from '../blogassets/HumanNotNumbers.jpg'
 import GreenEnergy from '../blogassets/GreenEnergy.jpg'
 
 
-export {MarkWirf, Covid19, tools, RNW, gregRobertson, harryreeder, CIDA100, balancingworkandfamily, orcascropped, fireflowtests, automation, cealingSquares, VRF, intern, troubleshooting, utilityCoordination, sistersmaintance, lessonCFD, LowHanging, cause, enginerd, humansnotnumbers, GreenEnergy }
+export {MarkWirf, Covid19, tools, RNW, gregRobertson, harryreeder, CIDA100, balancingworkandfamily, orcascropped, fireflowtests, automation, cealingSquares, VRF, intern, troubleshooting, utilityCoordination, sistersmaintance, lessonCFD, LowHanging,  enginerd, humansnotnumbers, GreenEnergy }

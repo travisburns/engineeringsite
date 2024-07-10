@@ -5,13 +5,17 @@ import NewsData, { News } from '../NewsData/NewsData';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+interface Params {
+  slug: string;
+}
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
 };
 
-export default function NewsDetailPage() {
-  const { slug } = useParams();
+export default function NewsDetailPage({ params }: { params: Params}) {
+  const { slug } = params;
   const news = NewsData.find((news: News) => news.id === slug);
 
   if (!news) {

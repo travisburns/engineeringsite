@@ -6,13 +6,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
+interface Params  
+{
+  slug: string;
+  project: string;
+}
+
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
 };
 
-export default function ProjectDetailPage() {
-  const { slug } = useParams();
+export default function ProjectDetailPage({ params }: { params: Params}) {
+  const  {slug}  = params;
   const project = projects.find((project: Project) => project.id === slug);
   
   if (!project) {
