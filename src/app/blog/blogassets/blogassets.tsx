@@ -15,7 +15,7 @@ import intern from '../blogassets/Jenna.jpg'
 import troubleshooting from '../blogassets/troubleshooting.jpg'
 import utilityCoordination from '../blogassets/utilityCoord.jpg'
 import sistersmaintance from '../blogassets/sistersmaintenance.jpg'
-import lessonCFD from '../blogassets/CFDlessonimage.jpg'
+import lessonCFD from '../blogassets/CFDLessonimage.jpg'
 import LowHanging from '../blogassets/energyUpgrades.jpg'
 
 import enginerd from '../blogassets/theenginerd.jpg'
